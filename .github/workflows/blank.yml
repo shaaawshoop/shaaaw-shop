@@ -1,0 +1,78 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>موقعي الأول</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #4CAF50;
+            padding: 20px;
+            color: white;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #ddd;
+            padding: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>مرحبًا بكم في موقعي</h1>
+    </header>
+
+    <main>
+        <h2>عنّي</h2>
+        <p>أنا مطور ويب مبتدئ وأحب البرمجة!</p>
+        <img src="https://via.placeholder.com/300x200" alt="صورة تجريبية">
+    </main>
+
+    <footer>
+        &copy; 2025 جميع الحقوق محفوظة
+    </footer>
+</body>
+</html>
+but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
